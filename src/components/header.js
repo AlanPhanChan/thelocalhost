@@ -1,6 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from './shared'
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { Link } from './shared';
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -38,4 +39,11 @@ export const Header = ({ siteTitle, siteDescription }) => (
     <StyledH1>{siteTitle}</StyledH1>
     <StyledP>{siteDescription}</StyledP>
   </StyledLink>
-)
+);
+
+Header.propTypes = {
+  /** The title from siteMetadata */
+  siteTitle: PropTypes.string,
+  /** The siteDescription from siteMetadata */
+  siteDescription: PropTypes.string,
+};
